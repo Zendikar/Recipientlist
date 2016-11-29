@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.groupx.recipientlist;
+package com.groupx.recipientlist.test;
 
-import java.io.IOException;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
@@ -39,6 +38,6 @@ public class EmitLog {
     }
 
     private static String getMessage(String[] argv) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return("Not supported yet.");
     }
 }

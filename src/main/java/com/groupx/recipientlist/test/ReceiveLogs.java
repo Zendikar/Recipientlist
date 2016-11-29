@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.groupx.recipientlist;
+package com.groupx.recipientlist.test;
 
 import com.rabbitmq.client.*;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  *
@@ -26,7 +29,7 @@ public class ReceiveLogs {
         String queueName = channel.queueDeclare().getQueue();
         channel.queueBind(queueName, EXCHANGE_NAME, "");
 
-        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+        System.out.println(" [*] Waiting for messages. To exit press X+ENTER");
 
         Consumer consumer = new DefaultConsumer(channel) {
             @Override
@@ -37,5 +40,14 @@ public class ReceiveLogs {
             }
         };
         channel.basicConsume(queueName, true, consumer);
+        try {
+            Scanner in = new Scanner(System.in);
+            String input = in.next();
+            if ("x".equals(input)) {
+                System.exit(0);
+            }
+        } catch (Exception e) {
+            
+        }
     }
 }
