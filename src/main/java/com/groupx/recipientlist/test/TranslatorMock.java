@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author Tobias
  */
-public class ReceiveLogs {
+public class TranslatorMock {
 
     private static final String EXCHANGE_NAME = "logs";
 

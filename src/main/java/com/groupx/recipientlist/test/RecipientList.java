@@ -14,7 +14,7 @@ import java.util.concurrent.TimeoutException;
  *
  * @author Tobias
  */
-public class EmitLog {
+public class RecipientList {
 
     private static final String EXCHANGE_NAME = "logs";
 
@@ -38,6 +38,10 @@ public class EmitLog {
     }
 
     private static String getMessage(String[] argv) {
-        return("Not supported yet.");
+        String s = "";
+        for (String argv1 : argv) {
+            s = s + argv1;
+        }
+        return s;
     }
 }
